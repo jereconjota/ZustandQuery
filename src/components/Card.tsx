@@ -24,7 +24,7 @@ function Card({ repository, isFavorite }: CardProps) {
   };
 
   return (
-    <div>
+    <div style={{border:"1px solid grey", margin:"10px", padding:"1rem"}}>
       <h1>{repository.name}</h1>
 
       <button onClick={toggleFavorite}>

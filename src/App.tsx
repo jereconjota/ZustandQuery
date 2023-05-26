@@ -11,7 +11,7 @@ function App() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
       {data?.map((repository) => (
         <Card
           repository={repository}
