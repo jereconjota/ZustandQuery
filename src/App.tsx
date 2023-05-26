@@ -3,16 +3,16 @@ import { useFetchRepositories } from "./hooks/useRepos";
 import { useFavoriteReposStore } from "./store/favoriteRepos";
 
 function App() {
-  const { data, isLoading } = useFetchRepositories("fazt");
+  const { data, isLoading } = useFetchRepositories("jereconjota");
   const favoriteRepos = useFavoriteReposStore(
-    (state) => state.favoriteReposIds
+    (state: any) => state.favoriteReposIds
   );
 
   if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
-      {data.map((repository) => (
+      {data?.map((repository) => (
         <Card
           repository={repository}
           key={repository.id}

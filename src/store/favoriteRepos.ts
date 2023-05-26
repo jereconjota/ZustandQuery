@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type favoriteRepoState = {
@@ -11,11 +11,11 @@ export const useFavoriteReposStore = create(
   persist((set) => ({
     favoriteReposIds: [],
     addFavoriteRepo: (id: number) =>
-      set((state) => ({ favoriteReposIds: [...state.favoriteReposIds, id] })),
+      set((state:any) => ({ favoriteReposIds: [...state.favoriteReposIds, id] })),
     removeFavoriteRepo: (id: number) =>
-      set((state) => ({
+      set((state:any) => ({
         favoriteReposIds: state.favoriteReposIds.filter(
-          (repoId) => repoId !== id
+          (repoId: number) => repoId !== id
         ),
       })),
   }), {
